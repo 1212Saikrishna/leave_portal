@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Leave Request</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            color: rgb(62, 67, 72);
+            font-family: Montserrat, sans-serif;
+            font-feature-settings: normal;
+            font-kerning: auto;
+            font-optical-sizing: auto;
+            font-size: 16px;
+            font-stretch: 100%;
+            font-style: normal;
+            font-variant-alternates: normal;
+            font-variant-caps: normal;
+            font-variant-east-asian: normal;
+            font-variant-ligatures: normal;
+            font-variant-numeric: normal;
+            font-variant-position: normal;
+            font-variation-settings: normal;
+            font-weight: 400;
+            line-height: 25.5px;
+            max-width: 100%;
+            padding: 0 30px;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: #1e90ff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>Submit Leave Request</h2>
+    <form method="POST" action="{{ url_for('submit_leave') }}">
+        <p>Employee Name: <input type="text" name="employee_name" required></p>
+        <p>Start Date: <input type="date" name="start_date" required></p>
+        <p>End Date: <input type="date" name="end_date" required></p>
+        <p>Reason: <input type="text" name="reason" required></p>
+        <p><button type="submit">Submit</button></p>
+    </form>
+    <p><a href="{{ url_for('home') }}">Go Back</a></p>
+</body>
+</html>
